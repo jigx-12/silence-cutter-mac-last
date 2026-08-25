@@ -1,0 +1,10 @@
+{
+  "name": "silence-cutter-ae",
+  "version": "1.0.0",
+  "description": "Remove silence from the selected AE layer using Silero VAD (CPU-only)",
+  "main": "main.js",
+  "dependencies": {
+    "onnxruntime-node": "^1.19.0",
+    "node-wav": "^0.0.2"
+  }
+}
