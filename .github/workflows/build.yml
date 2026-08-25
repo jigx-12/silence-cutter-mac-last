@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Download macOS FFmpeg Binary
+      - name: Download macOS FFmpeg
         run: |
           mkdir -p SilenceCutterAE/client/ffmpeg
           curl -L https://evermeet.cx/ffmpeg/ffmpeg-118837-g7198a27a05.zip -o ffmpeg.zip
@@ -31,13 +31,13 @@ jobs:
           fi
 
       - name: Make script executable
-        run: chmod +x "make pkg.sh"
+        run: chmod +x build_mac_pkg.sh
 
       - name: Run Mac Package Script
-        run: ./"make pkg.sh"
+        run: ./build_mac_pkg.sh
 
       - name: Upload PKG Artifact
         uses: actions/upload-artifact@v4
         with:
           name: SilenceCutter-Mac-Installer
-          path: SilenceCutterSetup.pkg
+          path: "*.pkg"
